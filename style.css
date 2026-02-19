@@ -1,0 +1,523 @@
+body {
+     margin: 0; 
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    margin-top: 90px; 
+    background-color: rgba(255, 255, 255, 0.1);
+    /* soft glass effect */
+    height: 450px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Input Field */
+input {
+    padding: 12px;
+    width: 250px;
+    /* consistent size */
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Hover effect for input */
+input:hover,
+input:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Button */
+button {
+    padding: 12px 30px;
+    /* consistent height with input */
+    margin-left: 10px;
+    background: #22c55e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover effect for button */
+button:hover {
+    background: #16a34a;
+    transform: scale(1.05);
+}
+
+/* Weather boxes */
+.weather-box {
+    height: 40px;
+    width: 260px;
+    margin: 15px auto;
+    padding: 15px;
+    background: #212d42;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.weather-box:hover {
+    background: #334155;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #38bdf8;
+}
+
+/* Images */
+img {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+/* Risk card */
+.risk-box {
+    width: 300px;
+    height: 200px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.risk-box:hover {
+    transform: scale(1.05);
+}
+
+/* Risk score text */
+.score {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.risk-name {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+.image-card {
+    width: 350px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.15);
+    /* glass effect */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-card img {
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.risk-level {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.risk-message {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+
+
+
+#showConditionBtn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#showConditionBtn:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.weather-condition {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    display: none;
+    /* hidden initially */
+}
+
+
+
+.body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+    text-align: center;
+}
+
+.container2 {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 80px auto;
+    width: 700px;
+    min-height: 550px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.road-condition-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    /* allow height to grow */
+}
+
+
+.road-condition-card:hover {
+    transform: scale(1.05);
+}
+
+.road-condition-card h2 {
+    margin-bottom: 30px;
+    /* more space below heading */
+}
+
+.road-condition-card img {
+    width: 350px;
+    /* fixed width */
+    min-height: 500px;
+    /* force minimum height */
+    height: auto;
+    /* maintain aspect ratio */
+    object-fit: cover;
+    /* fill area */
+    border-radius: 15px;
+    display: block;
+}
+
+
+
+.risk-info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    /* more padding inside risk info box */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    margin-top: 40px;
+    /* space above the risk info card */
+
+}
+
+.risk-level {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /* space between level and message */
+    color: white;
+}
+
+.risk-message {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 0px;
+}
+input {
+  width: 450px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  display: block;
+  margin: 60px auto 30px; /* TOP | LEFT-RIGHT | BOTTOM */
+  height: 30px;
+  transition: 0.3s;
+}
+
+button {
+  width: 450px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;        /* no extra top margin */
+  height: 50px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.back-btn {
+  max-width: 400px;
+  width: 90%;
+  margin: 15px auto;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+#road-heading{
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+/* ============================= */
+/* 📱 Mobile Responsive Styles */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Main containers */
+  .container,
+  .container2 {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  /* Input & buttons */
+  input,
+  button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  /* Weather boxes */
+  .weather-box {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Risk card */
+  .risk-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .score {
+    font-size: 48px;
+  }
+
+  .risk-name {
+    font-size: 20px;
+  }
+
+  /* Image card */
+  .image-card {
+    width: 100%;
+  }
+
+  .image-card img {
+    width: 100%;
+    min-height: 300px; /* smaller for mobile */
+  }
+
+  /* Road condition image */
+  .road-condition-card img {
+    width: 100%;
+    min-height: 350px;
+  }
+
+  /* Back button */
+  .back-btn {
+    width: 100%;
+  }
+}
+
+/* 📱 Very small devices (phones) */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .score {
+    font-size: 42px;
+  }
+
+  .risk-level {
+    font-size: 20px;
+  }
+
+  .risk-message {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input, button {
+  margin-top: 60px;  
+  width: 400px;          
+  padding: 12px;         
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  display: block;
+  margin: 40px auto;     
+  transition: 0.3s;
+  height: 30px;
+}
+
+
+button {
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  height: 50px;
+   margin-bottom: 10px; 
+  
+} */
+
+/* button:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+
+input:hover, input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #38bdf8;
+} */

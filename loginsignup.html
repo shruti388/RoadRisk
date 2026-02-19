@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Signup</title>
+    <!-- <script type ="module" src="register.js" defer></script> -->
+</head>
+<body>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   height: 80vh;
+}
+
+h2 {
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  width: 200px;  
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #af4c4c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #9145a0;
+}
+
+.section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;   
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+a {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px; 
+  }
+
+  .section {
+    width: 90%;    
+    max-width: 300px; 
+  }
+
+  input {
+    width: 100%;    
+    max-width: 200px; 
+  }
+}
+
+#forgot-password {
+  font-size: 13px;
+  text-align: left;
+  color: #af4c4c;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+</style>
+<div class="section">
+    <h2 id="form-title">Signup</h2>
+    <form id="form">
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <a href="#" id="forgot-password">Forgot password?</a>
+
+     <button id="action-btn">Signup</button>
+
+    </form>
+
+    <a href="#" id="toggle-link">Already have an account? Login</a>
+  </div>
+ <script>
+  const API_BASE = "http://localhost:3000";
+
+  // LOGIN / SIGNUP LOGIC
+  let isLogin = false;
+
+  const formTitle = document.getElementById("form-title");
+  const actionBtn = document.getElementById("action-btn");
+  const toggleLink = document.getElementById("toggle-link");
+  const form = document.getElementById("form");
+
+  toggleLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    isLogin = !isLogin;
+
+    if (isLogin) {
+      formTitle.innerText = "Login";
+      actionBtn.innerText = "Login";
+      toggleLink.innerText = "Dont have an account? Signup";
+    } else {
+      formTitle.innerText = "Signup";
+      actionBtn.innerText = "Signup";
+      toggleLink.innerText = "Already have an account? Login";
+    }
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please enter email and password");
+      return;
+    }
+
+    const endpoint = isLogin ? "/api/auth/login" : "/api/auth/signup";
+
+    try {
+      const res = await fetch(API_BASE + endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || "Something went wrong");
+        return;
+      }
+
+      alert(data.message);
+      window.location.href = "index.html";
+    } catch (err) {
+      alert("Cannot connect to server. Make sure the backend is running.");
+      console.error(err);
+    }
+  });
+
+</script>
+    
+</body>
+</html>

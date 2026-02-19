@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Risk Assessment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="showRisk()">
+
+<div class="container">
+  <h2>⚠️ Road Risk Assessment</h2>
+
+  <!-- Risk Card -->
+  <div class="risk-box">
+    <div id="riskScore" class="score">0</div>
+    <div id="riskName" class="risk-name">LOW</div>
+  </div>
+
+  <!-- Button to show weather condition -->
+  <button id="showConditionBtn" onclick="toggleCondition()">
+    Show Weather Condition ▼
+  </button>
+
+  <!-- Weather condition text (hidden by default) -->
+  <div id="weatherCondition" class="weather-condition"></div>
+</div>
+
+<script src="script.js"></script>
+<script>checkAuth();</script>
+</body>
+</html>
+
+
