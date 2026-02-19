@@ -11,6 +11,7 @@ const searchRoutes = require("./routes/searches");
 const weatherRoutes = require("./routes/weather");
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -29,7 +30,7 @@ app.use(compression());
 // CORS — allow frontend requests
 app.use(
   cors({
-    origin: true,
+    origin: "https://road-risk-sigma.vercel.app",
     credentials: true,
   })
 );
@@ -46,8 +47,8 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 60 * 24, // 1 day
       httpOnly: true,
-      sameSite: "lax",
-      secure: isProduction, // HTTPS only in production
+      sameSite: "none",
+      secure: true, // HTTPS only in production
     },
   })
 );
