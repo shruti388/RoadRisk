@@ -5,7 +5,7 @@ Write-Host "`n========================================" -ForegroundColor Cyan
 Write-Host "  Road Risk API Testing Script" -ForegroundColor Cyan
 Write-Host "========================================`n" -ForegroundColor Cyan
 
-$baseUrl = "http://localhost:3000"
+$baseUrl = "https://roadrisk-xtdc.onrender.com"
 $testResults = @()
 
 # Function to test API endpoint
