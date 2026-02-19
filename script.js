@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://roadrisk-xtdc.onrender.com/";
 
 // ==================== AUTH GUARD ====================
 // Runs on every page (except login/signup) — redirects if not logged in
