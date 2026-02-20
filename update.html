@@ -198,6 +198,15 @@
     }
 
     /* Responsive */
+    .page-heading {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
     @media (max-width: 768px) {
       .weather-main {
         flex-direction: column;
@@ -219,6 +228,10 @@
       .location-info h1 {
         font-size: 24px;
       }
+
+      .page-heading {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -226,6 +239,8 @@
 <body class="sunny">
 
 <div class="container">
+
+  <h2 class="page-heading">Real Time Updates</h2>
 
   <!-- ==================== WEATHER CARD ==================== -->
   <div class="weather-card">
