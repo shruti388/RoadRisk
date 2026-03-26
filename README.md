@@ -34,7 +34,7 @@
    <br>
   ⬤ Node.js (for backend logic and API handling) 
   <br>
-
+  <br>
    Database
    <br>
   ⬤ Supabase (Online PostgreSQL Database)
@@ -58,7 +58,7 @@
     <br>
     ⬤ Shows weather condition
     <br>
-    ⬤ shows live city map
+    • shows live city map
     <br>
     <hr>
  <h2>🧑‍💻 Author</h2>
