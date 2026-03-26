@@ -39,12 +39,12 @@
    <br>
   ⬤ Supabase (Online PostgreSQL Database)
   <br>
-
+  <br>
   APIs
   <br>
   ⬤ OpenWeather API (for real-time weather data)
   <br>
-
+  <br>
   Deployment
   <br>
   ⬤ Versel
@@ -58,7 +58,7 @@
     <br>
     ⬤ Shows weather condition
     <br>
-    • shows live city map
+    ⬤ shows live city map
     <br>
     <hr>
  <h2>🧑‍💻 Author</h2>
