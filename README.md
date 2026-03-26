@@ -9,7 +9,6 @@
     <hr>
 
 <h2>Objective</h2>
-<br>
     The main objective of this project is to:
     <br>
       ⬤ Predict road risk using weather data
@@ -30,7 +29,7 @@
   <br>
   ⬤ JavaScript
   <br>
-
+   <br>
    Backend
    <br>
   ⬤ Node.js (for backend logic and API handling) 
@@ -53,7 +52,6 @@
   <hr>
 
 <h2>✅ Features</h2>  
-<br>
     ⬤ Real-time weather data fetching
     <br>
     ⬤ Risk level Prediction (Low / Medium / High)
@@ -62,7 +60,7 @@
     <br>
     ⬤ shows live city map
     <br>
-
+    <hr>
  <h2>🧑‍💻 Author</h2>
      Name: Shruti Yewale
          
